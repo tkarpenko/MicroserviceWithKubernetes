@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database-versions
+  namespace: database-versions
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database-versions
+  template: 
+    metadata:
+      labels:
+        app: database-versions         
+    spec:               
+      containers:
+        - name: database-versions
+          image: tetianaworkplace/databaseversions:latest
+          resources:
+            limits:
+              memory: "1024Mi"              
+          ports:
+            - containerPort: 21
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database-versions-svc
+  namespace: database-versions
+spec:
+  selector:
+    app: database-versions
+  ports:
+    - protocol: TCP
+      port: 21
+      targetPort: 21
+  type: ClusterIP
