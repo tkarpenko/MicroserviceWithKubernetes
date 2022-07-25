@@ -1,17 +1,3 @@
-#!/bin/bash
-
-minikube start 
-
-
-kubectl apply -f yamls/namespaces.yaml
-kubectl apply -f yamls/secret.yaml
-kubectl apply -f yamls/pvc.yaml
-kubectl apply -f yamls/database-deployment.yaml
-kubectl apply -f yamls/database-versions-deployment.yaml
-
-
-# Set DB service and TCP service IPs to API the deployment
-
 dbHost=$(kubectl get services/mssqlsvc --namespace database -o jsonpath='{.spec.clusterIP}')
 tcpHost=$(kubectl get services/database-versions-svc --namespace database-versions -o jsonpath='{.spec.clusterIP}')
 

@@ -1,28 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: golf-fields
-  namespace: golf-fields
+  name: golf-fields-api
+  namespace: golf-fields-api
   labels:
-    app: golf-fields 
+    app: golf-fields-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: golf-fields
+      app: golf-fields-api
   template:
     metadata:
       labels:
-        app: golf-fields
+        app: golf-fields-api
     spec:               
       containers:
-        - name: golf-fields
-          image: tetianaworkplace/golffields:latest
+        - name: golf-fields-api
+          image: tetianaworkplace/golffieldsapi-test:latest
           resources:
             limits:
               memory: "1024Mi"              
           ports:
             - containerPort: 5000
+          volumes:
+            
           env:
             - name: TCP_HOST
               value: "{TCP_HOST}"
@@ -33,8 +35,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: golf-fields-service  
-  namespace: golf-fields
+  name: golf-fields-api-service  
+  namespace: golf-fields-api
 spec:
   type: LoadBalancer
   ports:
@@ -42,4 +44,4 @@ spec:
       port: 5000
       targetPort: 5000
   selector:
-    app: golf-fields
+    app: golf-fields-api
