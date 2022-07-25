@@ -4,3 +4,4 @@ tmp.sh
 **/.DS_Store
 yamls/golf-fields-api-deployment-copy.yaml
 yamls/api-deployment.yaml
+yamls/api-deployment-outdate.yaml
