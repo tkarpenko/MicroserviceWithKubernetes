@@ -10,3 +10,5 @@ will setup a minikube and pods for the microservice application with the followi
 * Database (Microsoft SQL Server)
 * Database Versions app (the app sending to Web Api app *.sql files with database updates)
 * Web Api app
+
+![alt text](http://url/to/img.png)
