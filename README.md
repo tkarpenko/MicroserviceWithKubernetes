@@ -1,6 +1,6 @@
 # Microservice with Kubernetes
 
-Yaml files int the repository will setup a minikube and pods of the microservice application with the following structure:
+Yaml files in the repository will setup a minikube and pods of the microservice application with the following structure:
 
 * Database (Microsoft SQL Server)
 * .NET 6 Web Api app
