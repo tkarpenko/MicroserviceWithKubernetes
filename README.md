@@ -36,14 +36,14 @@ To enrich API endpoints do the following:
 * Check Web API pod and wait the `Running` status
 
 ```> kubectl get pods --namespace golf-fields-api```
+
 ![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/api-pod.jpg)
 
 * Run
-
 ```> kubectl port-forward service/golf-fields-api-service --namespace golf-fields-api 5000:5000```
 * open Postman
 * do POST request to `http://localhost:5000/api/v1.0/User/Auth`
 
 ![postman](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/postman1.jpg)
 
-![postman](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/postman1.jpg)
+![postman](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/postman2.jpg)
