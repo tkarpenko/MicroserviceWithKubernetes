@@ -4,7 +4,7 @@ Yaml files in the repository will setup a minikube and pods of the microservice 
 
 * Database (Microsoft SQL Server)
 * .NET 6 Web Api app
-* Database Versions app (the app sending to Web Api app *.sql files with database updates)
+* Database Versions app
 
 ![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/Microservice.jpg)
 
