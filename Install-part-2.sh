@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# install Golf Fields API pod and expose it
+
 dbHost=$(kubectl get services/mssqlsvc --namespace database -o jsonpath='{.spec.clusterIP}')
 tcpHost=$(kubectl get services/database-versions-svc --namespace database-versions -o jsonpath='{.spec.clusterIP}')
 
