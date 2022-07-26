@@ -42,7 +42,7 @@ To enrich API endpoints do the following:
 * Run
 ```> kubectl port-forward service/golf-fields-api-service --namespace golf-fields-api 5000:5000```
 * open Postman
-* do POST request to `http://localhost:5000/api/v1.0/User/Auth`
+* do POST request to `http://localhost:5000/api/v1.0/User/Auth` with the payload `{"phone": "+380633333333"}`
 
 ![postman](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/postman1.jpg)
 
