@@ -21,19 +21,18 @@ To enrich API endpoints do the following:
 * Install docker on your machine
 * ```> git clone https://github.com/tkarpenko/MicroserviceWithKubernetes.git```
 * ```> cd MicroserviceWithKubernetes```
-* Run 
-```> sh Install-part-1.sh```
+* Run ```> sh Install-part-1.sh```
 * Check database and database-versions pods and wait the `Running` status
 
 ```> kubectl get pods --namespace database```
+
 ![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/db-pod.jpg)
 
 ```> kubectl get pods --namespace database-versions```
+
 ![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/db-v-pod.jpg)
 
-* Run 
-
-```> sh Install-part-2.sh```
+* Run ```> sh Install-part-2.sh```
 * Check Web API pod and wait the `Running` status
 
 ```> kubectl get pods --namespace golf-fields-api```
