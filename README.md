@@ -10,7 +10,7 @@ will setup a minikube and pods of the microservice application with the followin
 * .NET 6 Web Api app
 * Database Versions app (the app sending to Web Api app *.sql files with database updates)
 
-![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/Microservice.jpg)
+![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/Microservice.jpg)
 
 
 Source code of pods and packages:
@@ -29,15 +29,20 @@ To enrich API endpoints do the following:
 ```> sh Install-part-1.sh```
 * Check database and database-versions pods and wait the `Running` status
 ```> kubectl get pods --namespace database```
+![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/db-pod.jpg)
+
 ```> kubectl get pods --namespace database-versions```
+![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/db-v-pod.jpg)
+
 * Run 
 ```> sh Install-part-2.sh```
-
 * Check Web API pod and wait the `Running` status
 ```> kubectl get pods --namespace golf-fields-api```
+![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/api-pod.jpg)
+
 * Run
 ```> kubectl port-forward service/golf-fields-api-service --namespace golf-fields-api 5000:5000```
 * open Postman
 * do POST request to `http://localhost:5000/api/v1.0/User/Auth`
-![postman](https://github.com/tkarpenko/GolfFieldsApi/blob/main/docs/postman1.jpg)
-![postman](https://github.com/tkarpenko/GolfFieldsApi/blob/main/docs/postman2.jpg)
+![postman](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/postman1.jpg)
+![postman](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/postman1.jpg)
