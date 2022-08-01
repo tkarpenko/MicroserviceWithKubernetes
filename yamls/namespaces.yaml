@@ -12,3 +12,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: golf-fields-api
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: golf-fields-ui

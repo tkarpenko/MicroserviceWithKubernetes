@@ -23,8 +23,6 @@ spec:
               memory: "1024Mi"              
           ports:
             - containerPort: 5000
-          volumes:
-            
           env:
             - name: TCP_HOST
               value: "{TCP_HOST}"

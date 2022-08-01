@@ -1,5 +1,6 @@
 Delete-db-versions.sh
 Delete-fields.sh
+Delete-ui.sh
 tmp.sh
 **/.DS_Store
 yamls/golf-fields-api-deployment-copy.yaml

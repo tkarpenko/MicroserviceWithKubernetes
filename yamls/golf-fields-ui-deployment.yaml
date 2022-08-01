@@ -1,0 +1,64 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:  
+  name: golf-fields-ui-configmap    
+  namespace: golf-fields-ui
+  labels:
+    app: golf-fields-ui
+data:
+  webconfig: |
+    {
+      "apiEndpoint": "http://localhost:5000",
+      "apiVersion": "api/{API_VERSION}",
+      "buildTimeStamp": "{TIMESTAMP}"
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golf-fields-ui
+  namespace: golf-fields-ui
+  labels:
+    app: golf-fields-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: golf-fields-ui
+  template:
+    metadata:
+      labels:
+        app: golf-fields-ui
+    spec:               
+      containers:
+        - name: golf-fields-ui
+          image: tetianaworkplace/golffields-ui:latest
+          resources:
+            limits:
+              memory: "1024Mi"              
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: golf-fields-ui-volume
+              mountPath: /usr/local/apache2/htdocs/app.json
+              subPath: webconfig
+            
+          imagePullPolicy: Always
+      volumes:
+        - name: golf-fields-ui-volume
+          configMap:
+            name: golf-fields-ui-configmap 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: golf-fields-ui-service  
+  namespace: golf-fields-ui
+spec:
+  type: LoadBalancer
+  ports:
+    - name: ui
+      port: 80
+      targetPort: 80
+  selector:
+    app: golf-fields-ui
