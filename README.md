@@ -2,16 +2,17 @@
 
 Yaml files in the repository will setup a minikube and pods of the microservice application with the following structure:
 
+* Web UI (React+Redux)
+* Web Api (.NET 6)
+* Database Versions app (.NET 6)
 * Database (Microsoft SQL Server)
-* .NET 6 Web Api app
-* Database Versions app
 
 ![Microservice app](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/Microservice.jpg)
 
 
 Source code of pods and packages:
-* Web UI on React - https://github.com/tkarpenko/golf-fields-ui
-* .NET 6 Web Api - https://github.com/tkarpenko/GolfFieldsApi
+* Web UI - https://github.com/tkarpenko/golf-fields-ui
+* Web Api - https://github.com/tkarpenko/GolfFieldsApi
 * Database versions - https://github.com/tkarpenko/DatabaseVersions
 * TcpCommunicationTest package - https://github.com/tkarpenko/TcpLib
 
@@ -51,7 +52,8 @@ To enrich API endpoints do the following:
 * Open new tab in terminal and run
 ```> kubectl port-forward service/golf-fields-ui-service --namespace golf-fields-ui 3000:80```
 
-* Open any browser and open http://localhost:3000
+* Open in any browser the address http://localhost:3000
+![localhost](https://github.com/tkarpenko/MicroserviceWithKubernetes/blob/main/docs/localhost.jpg)
 
 
 * Open Postman
