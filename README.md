@@ -48,7 +48,7 @@ To enrich API endpoints do the following:
 
 * Run ```> sh Install-part-3.sh```
 
-* Check Web API pod and wait the `Running` status
+* Check Web UI pod and wait the `Running` status
 ```> kubectl get pods --namespace golf-fields-ui```
 
 * Run
